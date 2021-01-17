@@ -1,8 +1,11 @@
 const canvas = document.getElementById("canvas")
 const ctx = canvas.getContext("2d")
 
-var size = canvas.width;
-var iter = 0;
+const clearBtn = document.getElementById("clearBtn")
+const sierpCarpetBtn = document.getElementById("sierpCarpetBtn")
+
+let size = canvas.width;
+let iter = 0;
 
 
 
@@ -22,15 +25,18 @@ function sierpCarpet() {
           ctx.fillRect(s, s, s, s);
           ctx.translate(s*3, 0)
         }
-
         ctx.translate(-s*3*Math.pow(3, iter), s*3)
       }
-
       ctx.restore();
-
     }
-
     iter++;
   }
 }
-document.addEventListener("click", sierpCarpet)
+
+sierpCarpetBtn.addEventListener("click", sierpCarpet)
+clearBtn.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    size = canvas.width;
+    iter = 0;
+  }
+)

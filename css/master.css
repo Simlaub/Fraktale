@@ -1,10 +1,35 @@
-#canvasContainer {
+body {
+  height: 95vh;
+  width: 95vw;
+}
+
+#mainContainer {
   display: grid;
   place-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 12.5vmin 87.5vmin;
+  grid-auto-rows: repeat(2, 1fr);
 }
 
 #canvas {
   background-color: black;
-  width: 95vmin
+  width: 85vmin;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin: 0;
 
+}
+
+.button {
+  height: 10vmin;
+  width: 10vmin;
+  margin: 0;
 }

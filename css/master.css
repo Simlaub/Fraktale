@@ -1,0 +1,10 @@
+#canvasContainer {
+  display: grid;
+  place-items: center;
+}
+
+#canvas {
+  background-color: black;
+  width: 95vmin
+
+}

@@ -1,6 +1,7 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+const singleStep = document.getElementById("singleStep")
 const clearBtn = document.getElementById("clearBtn");
 const sierpCarpetBtn = document.getElementById("sierpCarpetBtn");
 const sierpTriangleBtn = document.getElementById("sierpTriangleBtn");
@@ -13,8 +14,7 @@ let triangleIter = 0;
 
 let max = 6;
 
-
-
+window.onload = () => singleStep.checked = false;
 
 function sierpCarpet() {
   if (carpetIter < max) {
@@ -35,6 +35,10 @@ function sierpCarpet() {
       ctx.restore();
     }
     carpetIter++;
+
+    if (singleStep.checked == false) {
+      sierpCarpet();
+    }
   }
 }
 
